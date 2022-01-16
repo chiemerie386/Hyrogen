@@ -4,7 +4,7 @@ import qs from 'qs'
 import { useCookies } from "react-cookie";
 import {useHistory} from 'react-router-dom';
 
-import {FaTwitter, FaCrown, FaUser, FaFire, FaCloudRain, FaCompactDisc, FaInstagram, FaPaperPlane, FaAngleDown, FaBell} from "react-icons/fa"
+import { FaInstagram, } from "react-icons/fa"
 import { Main, LoginLeft, LoginRight, LoginContent, InputFIeld, LabelText, PasswordBar, TinyText, CheckBox, LoginButton,
     RememberMe, SmallText, BigText, Overlay, LogoIcon, LogoText, BottomText, LeftContent, LeftText, BottomNav} from "./styles";
 
@@ -22,15 +22,7 @@ export default function Login() {
     }
 
     async function handleLogin () {
-        const data_info = {
-            username:email,
-            password,
-            grant_type: "password"
-        }
-        const BasicAuth = {
-            username:"hydrogenhr-hris-service",
-            password:"password"
-        }
+        
         try{
 
             const res = await axios({
