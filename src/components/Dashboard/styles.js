@@ -24,7 +24,7 @@ background-color: #FFFFFF;
 display:flex;
 align-items: flex-end;
 justify-content: space-between;
-padding: 0px 10%;
+padding: 0px 15%;
 /* color: #6554C0; */
 `
 export const BottomNav =styled.nav`
@@ -148,7 +148,14 @@ color: #7E73BA;
 
 export const TinyText = styled.span`
 font-size:13px;
-color: #ffffff;
+color: ${props => props.white ? "#FFFFFF" : "#696386"}
+`
+
+export const VerySmallText = styled.div`
+padding-top: 10px;
+font-size:10px;
+color: #696386;
+font-weight: 600;
 `
 
 export const SmallButton = styled.button`
@@ -176,31 +183,31 @@ width:100%;
 padding-top: 3%;
 margin-top: 3%;
 /* padding: 20px; */
-border-top: 1px solid #A2AFBF;
+border-top: 1px solid #cbcbcf;
 background-color: #FFFFFF;
 color: #ffffff;
 display: flex;
 flex-wrap: wrap;
 `
 export const Card = styled.div`
-padding: 20px 30px 0px 20px;
+padding: 20px 30px 0px 8px;
 color:#A2AFBF;
 display: flex;
 /* border: 1px solid red; */
-border-left: ${props => props.left ? "1px solid #A2AFBF" : ""}; 
-border-right: ${props => props.right ? "1px solid #A2AFBF" : ""}; 
-border-top: ${props => props.top ? "1px solid #A2AFBF" : ""}; 
-border-bottom: ${props => props.bottom ? "1px solid #A2AFBF" : ""}; 
-width: 25%
+border-left: ${props => props.left ? "1px solid #cbcbcf" : ""}; 
+border-right: ${props => props.right ? "1px solid #cbcbcf" : ""}; 
+border-top: ${props => props.top ? "1px solid #cbcbcf" : ""}; 
+border-bottom: ${props => props.bottom ? "1px solid #cbcbcf" : ""}; 
+width: 28%
 `
 export const BottomCard = styled.div`
 padding: 10px 10px 0px 20px;
 color:#A2AFBF;
 display: flex;
-border-left: ${props => props.left ? "1px solid #A2AFBF" : ""}; 
-border-right: ${props => props.right ? "1px solid #A2AFBF" : ""}; 
-border-top: ${props => props.top ? "1px solid #A2AFBF" : ""}; 
-border-bottom: ${props => props.bottom ? "1px solid #A2AFBF" : ""}; 
+border-left: ${props => props.left ? "1px solid #cbcbcf" : ""}; 
+border-right: ${props => props.right ? "1px solid #cbcbcf" : ""}; 
+border-top: ${props => props.top ? "1px solid #cbcbcf" : ""}; 
+border-bottom: ${props => props.bottom ? "1px solid ##cbcbcf" : ""}; 
 width: 17%
 `
 
@@ -219,6 +226,7 @@ color: #6554C0;
 
 export const CardAmount = styled.div`
 font-weight: 800;
+color:#000000;
 `
 
 export const CardDescription = styled.div`

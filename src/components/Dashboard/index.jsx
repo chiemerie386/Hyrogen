@@ -1,11 +1,11 @@
 import React from 'react'
 import {Chart} from '../Chart'
 import ToggleSwitch from "../ToggleSwitch";
-import {FaTwitter, FaCrown, FaUser, FaFire, FaCloudRain, FaCompactDisc, FaInstagram, FaPaperPlane, FaAngleDown, FaBell} from "react-icons/fa"
+import {FaPiggyBank, FaCrown, FaUser, FaFire, FaCloudRain, FaCompactDisc, FaInstagram, FaPaperPlane, FaAngleDown, FaBell} from "react-icons/fa"
 import {Main, Header, ChartHeader, BottomSummary, ChartContainer, ChartList,  TopBar, ChartMonthly, PersonalImage, LogoText, 
         SmallButton, HeaderIcons, PersonalDetails, AccountDetails, BigText, TinyText, Summary, Tabs, MediumText, BottomNav, 
         SmallText, DashBoardBody, BottomCard, Card, CardImage, CardAmount, CardDescription, MainBody, Icons, AccountSummary,
-         Logo, ProfileImage, NameText,OtherAccountDetails, Toggle, Details} from './styles'
+         Logo, ProfileImage, NameText,OtherAccountDetails, VerySmallText, Toggle, Details} from './styles'
 
 export default function Dashboard() {
     return (
@@ -47,14 +47,15 @@ export default function Dashboard() {
                         </PersonalDetails>
                         <OtherAccountDetails>
                             <div>
-                                <TinyText>Account Linked <br/> <b> **** **** **** 4563 </b></TinyText> <br/><br/>
-                                <TinyText>Account Balance <br/> ************ </TinyText>
+                                <TinyText >Account Linked</TinyText><TinyText white>  <br/> <b> **** **** **** 4563 </b></TinyText> <br/><br/>
+                                <TinyText>Account Balance </TinyText><TinyText white>  <br/> ************ </TinyText>
                             </div>
                             <Toggle>
                                 <ToggleSwitch/>
                             </Toggle>
                             
                         </OtherAccountDetails>
+                        <VerySmallText>NB: BALANCE IS CURRENTLY HIDDEN</VerySmallText>
                     </AccountDetails>
                     <AccountSummary>
                         <Card bottom right>
@@ -72,7 +73,7 @@ export default function Dashboard() {
                             </CardImage>
                             <div>
                                 <CardAmount>N285,000.90</CardAmount>
-                                <CardDescription>Total Gross Paid</CardDescription>
+                                <CardDescription>Total Net Paid</CardDescription>
                             </div>
                         </Card>
                         <Card bottom >
@@ -81,16 +82,16 @@ export default function Dashboard() {
                             </CardImage>
                             <div>
                                 <CardAmount>N285,000.90</CardAmount>
-                                <CardDescription>Total Gross Paid</CardDescription>
+                                <CardDescription>Total Extras Paid</CardDescription>
                             </div>
                         </Card>
                         <Card right>
                             <CardImage>
-                            <FaTwitter />
+                            <FaPiggyBank />
                             </CardImage>
                             <div>
                                 <CardAmount>N285,000.90</CardAmount>
-                                <CardDescription>Total Gross Paid</CardDescription>
+                                <CardDescription>Total Collections Paid</CardDescription>
                             </div>
                         </Card>
                         <Card right>
@@ -99,7 +100,7 @@ export default function Dashboard() {
                             </CardImage>
                             <div>
                                 <CardAmount>N285,000.90</CardAmount>
-                                <CardDescription>Total Gross Paid</CardDescription>
+                                <CardDescription>General Payment</CardDescription>
                             </div>
                         </Card>
                        
@@ -123,7 +124,16 @@ export default function Dashboard() {
                                 </CardImage>
                                 <div>
                                     <CardAmount>N285,000.90</CardAmount>
-                                    <CardDescription>Total Gross Paid</CardDescription>
+                                    <CardDescription>Total Net Paid</CardDescription>
+                                </div>
+                        </BottomCard>
+                        <BottomCard right>
+                                <CardImage>
+                                <FaCrown/>
+                                </CardImage>
+                                <div>
+                                    <CardAmount>N285,000.90</CardAmount>
+                                    <CardDescription>Total Extras Paid</CardDescription>
                                 </div>
                         </BottomCard>
                         <BottomCard right>
@@ -141,16 +151,7 @@ export default function Dashboard() {
                                 </CardImage>
                                 <div>
                                     <CardAmount>N285,000.90</CardAmount>
-                                    <CardDescription>Total Gross Paid</CardDescription>
-                                </div>
-                        </BottomCard>
-                        <BottomCard right>
-                                <CardImage>
-                                <FaCrown/>
-                                </CardImage>
-                                <div>
-                                    <CardAmount>N285,000.90</CardAmount>
-                                    <CardDescription>Total Gross Paid</CardDescription>
+                                    <CardDescription>Total Collections Paid</CardDescription>
                                 </div>
                         </BottomCard>
                         <BottomCard >
@@ -159,7 +160,7 @@ export default function Dashboard() {
                                 </CardImage>
                                 <div>
                                     <CardAmount>N285,000.90</CardAmount>
-                                    <CardDescription>Total Gross Paid</CardDescription>
+                                    <CardDescription>General Payment</CardDescription>
                                 </div>
                         </BottomCard>
                         </BottomSummary>

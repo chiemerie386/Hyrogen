@@ -6,12 +6,13 @@ import {useHistory} from 'react-router-dom';
 
 import { FaInstagram, } from "react-icons/fa"
 import { Main, LoginLeft, LoginRight, LoginContent, InputFIeld, LabelText, PasswordBar, TinyText, CheckBox, LoginButton,
-    RememberMe, SmallText, BigText, Overlay, LogoIcon, LogoText, BottomText, LeftContent, LeftText, BottomNav} from "./styles";
+        RememberMe, SmallText, BigText, Overlay, LogoIcon, LogoText, BottomText, LeftContent, LeftText, BottomNav} from "./styles";
 
 export default function Login() {
     const [token, setToken] = useCookies(["UserToken"]);
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [loading, setLoading] = useState(false)
     const url = "https://api.staging.hydrogenhr.com/api/v1/oauth/token"
     const History = useHistory()
     function handleEmailChange (e) {
@@ -24,7 +25,7 @@ export default function Login() {
     async function handleLogin () {
         
         try{
-
+            setLoading(true)
             const res = await axios({
                 method: 'post',
                 url: url,
@@ -42,13 +43,12 @@ export default function Login() {
                 }
               })
 
-
-            setToken("UserToken", res.data.access_token, {
-                maxAge: 186400,
-                });
-                History.push('/dashboard')
+            setToken("UserToken", res.data.access_token, { maxAge: 186400});
+            History.push('/dashboard')
+            setLoading(false)
         }catch(err){
             console.log(err)
+            setLoading(false)
         }
     }
     return (
@@ -91,13 +91,11 @@ export default function Login() {
                         <TinyText> Remember me</TinyText>
                     </RememberMe>
                     
-                    <LoginButton onClick={(e)=>handleLogin(e)}> Login</LoginButton>
+                    <LoginButton onClick={(e)=>handleLogin(e)}> {loading ? 'loading...' : 'Login' }</LoginButton>
                 </div>
 
                 <BottomText>Don't have money yet? <BottomText primary> Join Hydrogen payroll</BottomText></BottomText>
                 
-                
-
             </LoginContent>
         </LoginRight>
     </Main>
