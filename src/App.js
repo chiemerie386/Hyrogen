@@ -12,7 +12,7 @@ function App() {
   <Router>
       <Switch>
           <Route path='/login'>
-              {token ?  <Redirect to="/dashboard" /> :  <Login />}
+                <Login />
           </Route>
           <Route path='/dashboard'>
                 {token ? <Dashboard /> : <Redirect to="/login" />}
